@@ -3,12 +3,13 @@ package ObjectOrientedProgramming;
 public class Person {
     private String name;
     private int age;
-    private int cashAmount;
+    private int cashAmount; // 현금 보유량
     private BankAccount account;
+
 
     public void setAge(int newAge) {
         if (newAge >= 0) {
-            age = newAge; // 새로운 값이 양수일 때만 private 변수에 값을 넣어준다.
+            age = newAge;
         }
     }
 
@@ -35,10 +36,18 @@ public class Person {
     }
 
     public void setAccount(BankAccount newAccount) {
-        account = new BankAccount();
+        account = newAccount;
     }
 
     public BankAccount getAccount() {
         return account;
+    }
+
+    public boolean transfer(Person to, int amount) {
+        return account.transfer(to.getAccount(), amount);
+    }
+
+    public boolean transfer(BankAccount to, int amount) {
+        return account.transfer(to, amount);
     }
 }
