@@ -85,23 +85,24 @@ public class BankAccount {
         return transfer(to.getAccount(), amount);
     }
 
-    public BankAccount(int pBalance) {
-        balance = pBalance;
-        if (pBalance < 0) {
-            balance = 0;
+    public BankAccount(int balance) {
+        this.balance = balance;
+        if (balance < 0) {
+            this.balance = 0;
         }
     }
 
-    public BankAccount(Person pOwner) {
-        owner = pOwner;
+    public BankAccount(Person owner) {
+        this.owner = owner;
+        owner.setAccount(this);
         balance = 0;
     }
 
-    public BankAccount(int pBalance, Person pOwner) {
-        balance = pBalance;
-        owner = pOwner;
-        if (pBalance < 0) {
-            balance = 0;
+    public BankAccount(int balance, Person owner) {
+        this.balance = balance;
+        this.owner = owner;
+        if (balance < 0) {
+            this.balance = 0;
         }
     }
 }
