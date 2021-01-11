@@ -84,4 +84,24 @@ public class BankAccount {
     public boolean transfer(Person to, int amount) {
         return transfer(to.getAccount(), amount);
     }
+
+    public BankAccount(int pBalance) {
+        balance = pBalance;
+        if (pBalance < 0) {
+            balance = 0;
+        }
+    }
+
+    public BankAccount(Person pOwner) {
+        owner = pOwner;
+        balance = 0;
+    }
+
+    public BankAccount(int pBalance, Person pOwner) {
+        balance = pBalance;
+        owner = pOwner;
+        if (pBalance < 0) {
+            balance = 0;
+        }
+    }
 }

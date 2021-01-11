@@ -6,6 +6,27 @@ public class Person {
     private int cashAmount; // 현금 보유량
     private BankAccount account;
 
+    public Person(String pName, int pAge) {
+        name = pName;
+        age = pAge;
+        cashAmount = 0;
+        if (pAge < 0) {
+            age = 12;
+        }
+    }
+
+    public Person(String pName, int pAge, int pCashAmount) {
+        name = pName;
+        age = pAge;
+        cashAmount = pCashAmount;
+        if (pAge < 0) {
+            age = 12;
+        }
+        if (pCashAmount < 0) {
+            cashAmount = 0;
+        }
+    }
+
     public void setAge(int newAge) {
         if (newAge >= 0) {
             age = newAge;
