@@ -63,7 +63,7 @@ public class BankAccount {
     public boolean transfer(BankAccount to, int amount) {
         boolean success;
 
-        if (amount < 0 || balance < amount) {
+        if (amount < 0 || amount > balance) {
             success = false;
         } else {
             balance -= amount;

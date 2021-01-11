@@ -6,7 +6,6 @@ public class Person {
     private int cashAmount; // 현금 보유량
     private BankAccount account;
 
-
     public void setAge(int newAge) {
         if (newAge >= 0) {
             age = newAge;
